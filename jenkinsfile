@@ -1,0 +1,15 @@
+pipeline {
+    agent {
+        docker {
+            image 'python:3.14.2'
+        }
+    }
+    
+    stages {
+        stage('Check the version') {
+            steps {
+                sh '''python --version '''
+            }
+        }
+    }
+}
